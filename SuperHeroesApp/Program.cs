@@ -1,5 +1,5 @@
 ﻿using System.Text;
-
+using SuperHeroesApp.Models;
 
 // Creación de instancias de superpoderes
 var poderVolar = new SuperPoder();
@@ -72,51 +72,6 @@ SuperHeroesRecord superHeroesRecord2 = new SuperHeroesRecord(5, "Flash", "Barry 
 
 Console.WriteLine(superHeroesRecord1 == superHeroesRecord2); // true, porque los records comparan por valor
 
-
-
-class SuperHeroes
-{
-    // Propiedades
-    public int Id;
-    public string Nombre;
-    public string IdentidadSecreta;
-    public string Ciudad;
-    public List<SuperPoder> SuperPoderes;
-    public bool PuedeVolar;
-
-    // Constructor
-    public SuperHeroes()
-    {
-        Id = 0;
-        SuperPoderes = new List<SuperPoder>();
-        PuedeVolar = false;
-    }
-
-    public string UsarSuperPoderes() { 
-        StringBuilder sb = new StringBuilder();
-        foreach (var poder in SuperPoderes)
-        {
-            sb.AppendLine($"{Nombre} esta usando el superpoder {poder.Nombre}!!");
-        }
-
-        return sb.ToString();
-    }
-
-}
-
-class SuperPoder
-{
-    // Propiedades
-    public string Nombre;
-    public string Descripcion;
-    public NivelPoder Nivel;
-
-    // Constructor
-    public SuperPoder()
-    {
-        Nivel = NivelPoder.NivelUno;
-    }
-}
 
 // Conjunto cerrado de valores posibles
 enum NivelPoder
