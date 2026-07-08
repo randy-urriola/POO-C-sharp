@@ -16,6 +16,11 @@ poderAgilidad.Nombre = "Agilidad sobrehumana";
 poderAgilidad.Descripcion = "Capacidad de moverse con gran rapidez y destreza.";
 poderAgilidad.Nivel = NivelPoder.NivelDos;
 
+var regeneracion = new SuperPoder();
+regeneracion.Nombre = "Regeneración";
+regeneracion.Descripcion = "Capacidad de curarse rápidamente de heridas y enfermedades.";
+regeneracion.Nivel = NivelPoder.NivelTres;
+
 // Creación de instancias de superhéroes
 var superman = new SuperHeroes();
 var spiderman = new SuperHeroes();
@@ -71,6 +76,32 @@ SuperHeroesRecord superHeroesRecord1 = new SuperHeroesRecord(5, "Flash", "Barry 
 SuperHeroesRecord superHeroesRecord2 = new SuperHeroesRecord(5, "Flash", "Barry Allen");
 
 Console.WriteLine(superHeroesRecord1 == superHeroesRecord2); // true, porque los records comparan por valor
+
+
+// Herencia de clases
+var wolverine = new AntiHeroe();
+wolverine.Id = 5;
+wolverine.Nombre = "Wolverine";
+wolverine.IdentidadSecreta = "Logan";
+wolverine.Ciudad = "Alberta";
+wolverine.PuedeVolar = false;
+
+List<SuperPoder> wolverinePoderes = new List<SuperPoder>();
+wolverinePoderes.Add(regeneracion);
+wolverinePoderes.Add(poderFuerza);
+wolverine.SuperPoderes = wolverinePoderes;
+result = wolverine.RealizarAccionAntiHeroica("luchar contra los buenos.");
+Console.WriteLine(result);
+
+// abstracción de clases
+string resultadoSalvarMundo = superman.SalvarElMundo();
+string resultadoSalvarTierra = superman.SalvarTierra();
+Console.WriteLine(resultadoSalvarMundo);
+Console.WriteLine(resultadoSalvarTierra);
+
+// Polimorfismo de clases
+string resultadoSalvarPersonas = superman.SalvarPersonas();
+Console.WriteLine(resultadoSalvarPersonas);
 
 
 // Conjunto cerrado de valores posibles

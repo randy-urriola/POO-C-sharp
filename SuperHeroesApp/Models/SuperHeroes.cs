@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SuperHeroesApp.Models
 {
-    class SuperHeroes
+    class SuperHeroes : Heroe
     {
         // Propiedades
         public int Id;
@@ -18,7 +18,7 @@ namespace SuperHeroesApp.Models
 
         // ejemplo de encapsulamiento
         private string _Nombre;
-        public string Nombre
+        public override string Nombre
         {
             get { return _Nombre; }
             set
@@ -50,6 +50,17 @@ namespace SuperHeroesApp.Models
             }
 
             return sb.ToString();
+        }
+
+        public override string SalvarElMundo()
+        {
+            return $"{NombreEIdentidadSetreta} está salvando el mundo!";
+        }
+
+        public override string SalvarPersonas()
+        {
+            //return base.SalvarPersonas();
+            return $"{NombreEIdentidadSetreta} ha salvando a +100 personas! quiere decir que {base.SalvarPersonas()}";
         }
 
     }
