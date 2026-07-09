@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperHeroesApp.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace SuperHeroesApp.Models
 {
-    class SuperHeroes : Heroe
+    class SuperHeroes : Heroe, ISuperHeroe
     {
         // Propiedades
-        public int Id;
+        public int Id { get; set; }
         
-        public string IdentidadSecreta;
-        public string Ciudad;
-        public List<SuperPoder> SuperPoderes;
-        public bool PuedeVolar;
+        public string IdentidadSecreta { get; set; }
+        public string Ciudad { get; set; }
+        public List<SuperPoder> SuperPoderes { get; set; }
+        public bool PuedeVolar { get; set; }
 
         // ejemplo de encapsulamiento
         private string _Nombre;

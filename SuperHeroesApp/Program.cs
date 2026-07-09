@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using SuperHeroesApp;
 using SuperHeroesApp.Models;
 
 // Creación de instancias de superpoderes
@@ -102,6 +103,11 @@ Console.WriteLine(resultadoSalvarTierra);
 // Polimorfismo de clases
 string resultadoSalvarPersonas = superman.SalvarPersonas();
 Console.WriteLine(resultadoSalvarPersonas);
+
+// Implementación de interfaces
+ImprimirInfoInterface imprimirInfo = new ImprimirInfoInterface();
+imprimirInfo.ImprimirInfo(superman);
+imprimirInfo.ImprimirInfo(wolverine);
 
 
 // Conjunto cerrado de valores posibles
